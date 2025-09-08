@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">expsense-tracker</string>
+    <string name="title_activity_main">expsense-tracker</string>
+    <string name="package_name">com.example.expensetrack</string>
+    <string name="custom_url_scheme">com.example.expensetrack</string>
+</resources>
