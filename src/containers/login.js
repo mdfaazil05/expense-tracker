@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { NavLink, useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,6 +26,20 @@ const Login = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+      });
+  };
+
+  const GoogleAuth = new GoogleAuthProvider();
+
+  const onGoogleSignIn = () => {
+    signInWithPopup(auth, GoogleAuth)
+      .then((result) => {
+        const user = result.user;
+        console.log("Google sign-in successful:", user);
+        navigate("/home");
+      })
+      .catch((error) => {
+        console.error("Google sign-in error:", error);
       });
   };
 
@@ -65,6 +84,7 @@ const Login = () => {
               No account yet? <NavLink to="/signup">Sign up</NavLink>
             </p>
           </div>
+          <Button onClick={onGoogleSignIn}>Google</Button>
         </section>
       </main>
     </>
