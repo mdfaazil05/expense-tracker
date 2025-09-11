@@ -6,7 +6,10 @@ const config = {
   plugins: {
     GoogleAuth: {
       scopes: ["profile", "email"],
-      serverClientId: "YOUR_WEB_CLIENT_ID.apps.googleusercontent.com",
+      webClientId:
+        "572156481909-dsp57ms7k5o5h6r0e7gpcdh0ndqkqhqe.apps.googleusercontent.com",
+      androidClientId:
+        "572156481909-iku037ct03s0olj56upr5hi761447asj.apps.googleusercontent.com",
       forceCodeForRefreshToken: true,
     },
   },

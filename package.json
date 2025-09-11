@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "copy:android": "npm run build && npx cap copy android",
+    "sync:android": "npm run build && npx cap sync android"
   },
   "keywords": [],
   "author": "",
