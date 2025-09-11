@@ -141,6 +141,8 @@ import { useAppContext } from "../context/ContextProvider";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase/firebase";
 
 const drawerWidth = 210;
 
@@ -346,7 +348,7 @@ export default function MiniDrawer() {
             )
           )}
         </List>
-        <Button>Logout</Button>
+        <Button onClick={handleLogout}>Logout</Button>
         <Divider />
       </Drawer>
     </Box>
