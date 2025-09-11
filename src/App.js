@@ -34,7 +34,8 @@ const AppContent = () => {
       } else {
         // User is signed out
         // ...
-        console.log("user is logged out");
+        navigate("/home");
+        // console.log("user is logged out");
       }
     });
   }, []);
