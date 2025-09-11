@@ -139,6 +139,8 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { useAppContext } from "../context/ContextProvider";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 210;
 
@@ -201,6 +203,20 @@ export default function MiniDrawer() {
       setOpen(false);
       setOpenDraw(false);
     }
+  };
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        navigate("/");
+        console.log("Signed out successfully");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
   };
 
   return (
@@ -330,6 +346,7 @@ export default function MiniDrawer() {
             )
           )}
         </List>
+        <Button>Logout</Button>
         <Divider />
       </Drawer>
     </Box>
