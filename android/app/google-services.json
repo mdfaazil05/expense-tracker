@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:869919902552:android:65bd448dafc33df39db32d",
+        "mobilesdk_app_id": "1:869919902552:android:c6ef09b19dbf1e689db32d",
         "android_client_info": {
-          "package_name": "com.md.expensetracker"
+          "package_name": "com.example.expensetrack"
         }
       },
       "oauth_client": [
