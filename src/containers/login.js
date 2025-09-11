@@ -3,6 +3,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -32,7 +33,7 @@ const Login = () => {
   const GoogleAuth = new GoogleAuthProvider();
 
   const onGoogleSignIn = () => {
-    signInWithPopup(auth, GoogleAuth)
+    signInWithRedirect(auth, GoogleAuth)
       .then((result) => {
         const user = result.user;
         console.log("Google sign-in successful:", user);
