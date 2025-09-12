@@ -1,3 +1,19 @@
+pluginManagement {
+    repositories {
+        google()             // Needed for Google plugins
+        mavenCentral()       // Standard Maven Central
+        gradlePluginPortal() // Needed for Gradle plugins
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 include ':app'
 include ':capacitor-cordova-android-plugins'
 project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins/')
